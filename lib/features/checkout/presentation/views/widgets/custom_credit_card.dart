@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:payment/core/utils/theme/text_style.dart';
 
 class CustomCreditCard extends StatefulWidget {
-  const CustomCreditCard({super.key});
-
+  const CustomCreditCard({super.key, required this.formKey, required this.autovalidateMode});
+  final GlobalKey<FormState> formKey;
+  final AutovalidateMode autovalidateMode;
   @override
   State<CustomCreditCard> createState() => _CustomCreditCardState();
 }
@@ -20,11 +22,11 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
   bool useFloatingAnimation = true;
   final OutlineInputBorder border = OutlineInputBorder(
     borderSide: BorderSide(
+      // ignore: deprecated_member_use
       color: Colors.grey.withOpacity(0.7),
       width: 2.0,
     ),
   );
-  final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,26 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               showBackView = creditCardModel.isCvvFocused;
             });
           },
-          formKey: formKey,
+          formKey: widget.formKey,
+          autovalidateMode: widget.autovalidateMode,
+          inputConfiguration: InputConfiguration(
+            cardHolderDecoration: InputDecoration(
+              labelStyle: TextStyles.style18,
+              labelText: 'Card Holder Name',
+            ),
+            cardNumberDecoration: InputDecoration(
+              labelStyle: TextStyles.style18,
+              labelText: 'Card Number',
+            ),
+            expiryDateDecoration: InputDecoration(
+              labelStyle: TextStyles.style18,
+              labelText: 'Expiry Date',
+            ),
+            cvvCodeDecoration: InputDecoration(
+              labelStyle: TextStyles.style18,
+              labelText: 'CVV',
+            ),
+          ),
         ),
       ],
     );
