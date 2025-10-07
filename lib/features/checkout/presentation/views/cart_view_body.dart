@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/utils/widgets/custom_button.dart';
+import 'package:payment/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/oreder_info_item.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/total_price.dart';
 
@@ -57,7 +58,16 @@ class CartViewBody extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          CustomButton(text: 'Proceed to Checkout', onPressed: () {}),
+          CustomButton(
+            text: 'Proceed to Checkout',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PaymentDetailsView(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
