@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:payment/core/utils/theme/text_style.dart';
 
 class CardInfoWidget extends StatelessWidget {
   const CardInfoWidget({
@@ -18,37 +19,24 @@ class CardInfoWidget extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset('assets/svgs/logo.svg'),
           const SizedBox(
             width: 23,
           ),
-          Text.rich(
-            TextSpan(
-              children: [
-                const TextSpan(
-                  text: 'Credit Card',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-                TextSpan(
-                  text: 'Mastercard **78',
-                  style: TextStyle(
-                    // ignore: deprecated_member_use
-                    color: Colors.black.withOpacity(0.699999988079071),
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Credit Card',
+                style: TextStyles.style18,
+              ),
+              Text(
+                'Mastercard **78',
+                style: TextStyles.style16,
+              ),
+            ],
           ),
         ],
       ),

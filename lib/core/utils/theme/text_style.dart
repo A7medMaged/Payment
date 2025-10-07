@@ -42,4 +42,10 @@ abstract class TextStyles {
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
+
+  static TextStyle style16 = const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: Colors.black,
+  );
 }

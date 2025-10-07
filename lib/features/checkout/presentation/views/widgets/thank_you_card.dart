@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:payment/core/utils/theme/text_style.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/card_info_widget.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_info_item.dart';
