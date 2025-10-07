@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:payment/core/utils/theme/text_style.dart';
+import 'package:payment/features/checkout/presentation/views/cart_view_body.dart';
 
 class CartVeiw extends StatelessWidget {
   const CartVeiw({super.key});
@@ -21,12 +22,7 @@ class CartVeiw extends StatelessWidget {
           style: TextStyles.style25,
         ),
       ),
-      body: Center(
-        child: Text(
-          'Payment App',
-          style: TextStyles.style24,
-        ),
-      ),
+      body: const CartViewBody(),
     );
   }
 }
