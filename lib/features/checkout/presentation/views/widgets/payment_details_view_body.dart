@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/utils/widgets/custom_button.dart';
+import 'package:payment/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/custom_credit_card.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_method.dart';
 
@@ -40,7 +41,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                     formKey.currentState!.save();
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const Text('Success'),
+                        builder: (context) => const ThankYouView(),
                       ),
                     );
                   } else {
