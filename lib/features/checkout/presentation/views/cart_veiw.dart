@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment/core/utils/theme/text_style.dart';
 
 class CartVeiw extends StatelessWidget {
   const CartVeiw({super.key});
@@ -7,13 +8,15 @@ class CartVeiw extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Cart View',
+          style: TextStyles.style25,
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'Cart View',
+          'Payment App',
+          style: TextStyles.style24,
         ),
       ),
     );
