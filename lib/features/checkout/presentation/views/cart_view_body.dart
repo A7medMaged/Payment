@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment/core/utils/widgets/custom_button.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/oreder_info_item.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/total_price.dart';
 
@@ -14,7 +15,11 @@ class CartViewBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.asset('assets/images/cart.png'),
+          Expanded(
+            child: Image.asset(
+              'assets/images/cart.png',
+            ),
+          ),
           const SizedBox(
             height: 25,
           ),
@@ -37,7 +42,7 @@ class CartViewBody extends StatelessWidget {
             orderPrice: '\$8',
           ),
           const SizedBox(
-            height: 8,
+            height: 12,
           ),
           const Divider(
             thickness: 2,
@@ -46,9 +51,13 @@ class CartViewBody extends StatelessWidget {
             color: Color(0xFFC7C7C7),
           ),
           const SizedBox(
-            height: 8,
+            height: 12,
           ),
           const TotalPrice(totalPrice: '\$50.97'),
+          const SizedBox(
+            height: 16,
+          ),
+          CustomButton(text: 'Proceed to Checkout', onPressed: () {}),
         ],
       ),
     );
