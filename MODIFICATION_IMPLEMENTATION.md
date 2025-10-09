@@ -41,14 +41,14 @@ In this phase, we will create the `ThemeCubit` responsible for managing the them
 
 This phase focuses on integrating the `ThemeCubit` into the main application widget.
 
-- [ ] Modify `lib/main.dart` to wrap the application with `BlocProvider`.
-- [ ] Wrap the `MaterialApp` widget in a `BlocBuilder`.
-- [ ] Define the `theme` and `darkTheme` properties in `MaterialApp`, generating the dark theme from the existing light theme's seed color.
-- [ ] **End of Phase 3 Checklist:**
-    - [ ] Run `dart_fix --apply`.
-    - [ ] Run `analyze_files` and fix any issues.
-    - [ ] Run tests again to ensure no regressions.
-    - [ ] Run `dart_format .`.
+- [x] Modify `lib/main.dart` to wrap the application with `BlocProvider`.
+- [x] Wrap the `MaterialApp` widget in a `BlocBuilder`.
+- [x] Define the `theme` and `darkTheme` properties in `MaterialApp`, generating the dark theme from the existing light theme's seed color.
+- [x] **End of Phase 3 Checklist:**
+    - [x] Run `dart_fix --apply`.
+    - [x] Run `analyze_files` and fix any issues.
+    - [x] Run tests again to ensure no regressions.
+    - [x] Run `dart_format .`.
     - [ ] Update the Journal section below with learnings and deviations.
     - [ ] Use `git diff` to verify changes, propose a commit message, and await user approval before committing.
     - [ ] After committing, use the `hot_reload` tool if the app is running.
@@ -99,3 +99,9 @@ This final phase is for cleanup and final verification.
 - **Learnings:** `SharedPreferences` has a built-in mocking mechanism that is very convenient for testing, avoiding the need for more complex mocking setups with `mockito` for this use case.
 - **Surprises:** None.
 - **Deviations:** Decided to use `SharedPreferences.setMockInitialValues` instead of `mockito` as initially planned, which simplified the test setup.
+
+### Phase 3: App Integration
+- **Actions:** Integrated `ThemeCubit` into `main.dart` by wrapping the root widget with `BlocProvider` and `BlocBuilder`. Defined `theme` and `darkTheme` in `MaterialApp` using `ColorScheme.fromSeed` for consistency. Added `.apply(bodyColor: Colors.white, displayColor: Colors.white)` to the dark theme's `textTheme` to ensure text legibility.
+- **Learnings:** When creating a `darkTheme`, it's important to consider the default text colors, as they might not contrast well with the dark background. Explicitly setting the text color using `.apply()` is a good practice.
+- **Surprises:** None.
+- **Deviations:** None.

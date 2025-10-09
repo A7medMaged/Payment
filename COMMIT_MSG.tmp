@@ -1,5 +1,5 @@
-feat(theme): Implement ThemeCubit for state management
+feat(theme): Integrate ThemeCubit into the application
 
-Adds the core logic for managing theme state using a `ThemeCubit`. This cubit is responsible for toggling the theme, persisting the user's choice to `SharedPreferences`, and loading the theme on app startup.
+Wraps the root of the application with `BlocProvider` to make the `ThemeCubit` available throughout the widget tree.
 
-Includes comprehensive unit tests for the `ThemeCubit` to ensure its reliability, using the built-in mocking support from `shared_preferences`.
+The `MaterialApp` now uses `BlocBuilder` to listen to theme state changes and dynamically switch between the defined light and dark themes. A dark theme is generated from the same seed color as the light theme to ensure brand consistency.
