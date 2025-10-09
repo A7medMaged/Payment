@@ -5,7 +5,9 @@ import 'package:payment/features/checkout/data/models/payment_intent_request.dar
 import 'package:payment/features/checkout/data/repos/checkout_repo.dart';
 
 class CheckoutRepoImpl extends CheckoutRepo {
-  final StripeService stripeService = StripeService();
+  final StripeService stripeService;
+
+  CheckoutRepoImpl({required this.stripeService});
 
   @override
   Future<Either<Failure, void>> makePayment({

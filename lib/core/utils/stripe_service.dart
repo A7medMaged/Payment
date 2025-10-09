@@ -4,7 +4,9 @@ import 'package:payment/features/checkout/data/models/payment_intent_model_respo
 import 'package:payment/features/checkout/data/models/payment_intent_request.dart';
 
 class StripeService {
-  final Dio dio = Dio();
+  final Dio dio;
+
+  StripeService({required this.dio});
   Future<PaymentIntentModel> createPaymentIntent(
     PayMentIntentRequest paymentIntentRequest,
   ) async {
