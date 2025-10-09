@@ -16,6 +16,8 @@ dependencies:
   flutter_credit_card: ^4.1.0
   font_awesome_flutter: ^10.10.0
   flutter_stripe: ^12.0.2
+  flutter_bloc: ^9.1.1
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_lints: ^5.0.0

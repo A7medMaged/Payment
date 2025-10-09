@@ -1,0 +1,7 @@
+feat(theme): Set up project for theme switching
+
+Adds the necessary dependencies ('flutter_bloc', 'shared_preferences') to support theme state management and persistence.
+
+Replaces the outdated and failing boilerplate widget test with a placeholder to establish a clean testing baseline before implementing the new feature.
+
+Also includes minor auto-formatting changes.

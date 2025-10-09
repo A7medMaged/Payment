@@ -17,7 +17,7 @@ class PaymentItemInfo extends StatelessWidget {
         Text(
           value,
           style: TextStyles.style18Bold,
-        )
+        ),
       ],
     );
   }
