@@ -1,7 +1,5 @@
-feat(theme): Set up project for theme switching
+feat(theme): Implement ThemeCubit for state management
 
-Adds the necessary dependencies ('flutter_bloc', 'shared_preferences') to support theme state management and persistence.
+Adds the core logic for managing theme state using a `ThemeCubit`. This cubit is responsible for toggling the theme, persisting the user's choice to `SharedPreferences`, and loading the theme on app startup.
 
-Replaces the outdated and failing boilerplate widget test with a placeholder to establish a clean testing baseline before implementing the new feature.
-
-Also includes minor auto-formatting changes.
+Includes comprehensive unit tests for the `ThemeCubit` to ensure its reliability, using the built-in mocking support from `shared_preferences`.

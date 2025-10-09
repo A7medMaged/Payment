@@ -22,18 +22,18 @@ The goal of this phase is to add the necessary dependencies and establish a base
 
 In this phase, we will create the `ThemeCubit` responsible for managing the theme state.
 
-- [ ] Create the `lib/core/utils/theme/` directory.
-- [ ] Create the `ThemeCubit` in `lib/core/utils/theme/theme_cubit.dart` as specified in the design document.
-- [ ] Create a unit test file `test/core/utils/theme/theme_cubit_test.dart`.
-- [ ] Write unit tests for the `ThemeCubit` to verify:
+- [x] Create the `lib/core/utils/theme/` directory.
+- [x] Create the `ThemeCubit` in `lib/core/utils/theme/theme_cubit.dart` as specified in the design document.
+- [x] Create a unit test file `test/core/utils/theme/theme_cubit_test.dart`.
+- [x] Write unit tests for the `ThemeCubit` to verify:
     - Initial state is `ThemeMode.light`.
     - `toggleTheme` correctly switches the state between `light` and `dark`.
     - The cubit correctly interacts with mock `SharedPreferences`.
-- [ ] **End of Phase 2 Checklist:**
-    - [ ] Run `dart_fix --apply`.
-    - [ ] Run `analyze_files` and fix any issues.
-    - [ ] Run tests again to ensure no regressions.
-    - [ ] Run `dart_format .`.
+- [x] **End of Phase 2 Checklist:**
+    - [x] Run `dart_fix --apply`.
+    - [x] Run `analyze_files` and fix any issues.
+    - [x] Run tests again to ensure no regressions.
+    - [x] Run `dart_format .`.
     - [ ] Update the Journal section below with learnings and deviations.
     - [ ] Use `git diff` to verify changes, propose a commit message, and await user approval before committing.
 
@@ -93,3 +93,9 @@ This final phase is for cleanup and final verification.
 - **Learnings:** The project's tests were not up-to-date with the actual application code. It's crucial to run tests at the beginning to catch such inconsistencies.
 - **Surprises:** The initial test failure was a surprise but was quickly resolved.
 - **Deviations:** Deviated from the plan to fix the failing test before proceeding. This was necessary to establish a reliable starting point.
+
+### Phase 2: Core Logic (Cubit)
+- **Actions:** Created `ThemeCubit` to manage theme state. Added `mockito` as a dev dependency, but then used the simpler `SharedPreferences.setMockInitialValues` for testing. Created unit tests for the `ThemeCubit`, covering initial state, loading from prefs, and toggling the theme. Ran `dart_fix`, which added return types to the cubit methods.
+- **Learnings:** `SharedPreferences` has a built-in mocking mechanism that is very convenient for testing, avoiding the need for more complex mocking setups with `mockito` for this use case.
+- **Surprises:** None.
+- **Deviations:** Decided to use `SharedPreferences.setMockInitialValues` instead of `mockito` as initially planned, which simplified the test setup.
