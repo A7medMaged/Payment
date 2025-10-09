@@ -11,6 +11,7 @@ class CartVeiw extends StatelessWidget {
       appBar: buildAppBar(
         title: 'My Cart',
         onTap: () {},
+        context: context,
       ),
       body: const CartViewBody(),
     );

@@ -13,6 +13,7 @@ class ThankYouView extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
         },
+        context: context,
       ),
       body: Transform.translate(
         offset: const Offset(0, -16),

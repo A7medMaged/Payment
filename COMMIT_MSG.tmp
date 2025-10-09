@@ -1,5 +1,5 @@
-feat(theme): Integrate ThemeCubit into the application
+feat(theme): Add settings screen and theme toggle UI
 
-Wraps the root of the application with `BlocProvider` to make the `ThemeCubit` available throughout the widget tree.
+Creates a new settings screen that contains a `SwitchListTile` to allow users to toggle between light and dark modes.
 
-The `MaterialApp` now uses `BlocBuilder` to listen to theme state changes and dynamically switch between the defined light and dark themes. A dark theme is generated from the same seed color as the light theme to ensure brand consistency.
+Adds a settings icon to the global `CustomAppBar` that navigates to this new screen. All instances of the `buildAppBar` function have been updated to support this navigation.

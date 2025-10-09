@@ -13,6 +13,7 @@ class PaymentDetailsView extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
         },
+        context: context,
       ),
       body: const PaymentDetailsViewBody(),
     );
