@@ -1,5 +1,0 @@
-feat(theme): Add settings screen and theme toggle UI
-
-Creates a new settings screen that contains a `SwitchListTile` to allow users to toggle between light and dark modes.
-
-Adds a settings icon to the global `CustomAppBar` that navigates to this new screen. All instances of the `buildAppBar` function have been updated to support this navigation.
