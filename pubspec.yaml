@@ -9,14 +9,15 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  dio: ^5.9.0
   flutter:
     sdk: flutter
-  flutter_svg: ^2.2.1
-  google_fonts: ^6.3.2
-  flutter_credit_card: ^4.1.0
-  font_awesome_flutter: ^10.10.0
-  flutter_stripe: ^12.0.2
   flutter_bloc: ^9.1.1
+  flutter_credit_card: ^4.1.0
+  flutter_stripe: ^12.0.2
+  flutter_svg: ^2.2.1
+  font_awesome_flutter: ^10.10.0
+  google_fonts: ^6.3.2
   shared_preferences: ^2.5.3
 
 dev_dependencies:
@@ -30,7 +31,6 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
-
   # fonts:
   #   - family: Schyler
   #     fonts:
