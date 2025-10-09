@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,7 +28,9 @@ class PaymentMethodItem extends StatelessWidget {
         ),
         shadows: [
           BoxShadow(
-            color: isActive ? const Color(0xFF34A853) : Colors.white,
+            color: isActive
+                ? const Color(0xFF34A853).withOpacity(0.25)
+                : Colors.white.withOpacity(0.25),
             blurRadius: 4,
           ),
         ],

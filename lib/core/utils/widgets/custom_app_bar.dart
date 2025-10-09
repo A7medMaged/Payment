@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:payment/core/utils/theme/text_style.dart';
 import 'package:payment/features/settings/presentation/views/settings_view.dart';
 
@@ -13,10 +12,7 @@ AppBar buildAppBar({
     elevation: 0,
     leading: GestureDetector(
       onTap: onTap,
-      child: SvgPicture.asset(
-        'assets/svgs/arrow.svg',
-        fit: BoxFit.scaleDown,
-      ),
+      child: const Icon(Icons.arrow_back_ios),
     ),
     actions: [
       if (context != null)

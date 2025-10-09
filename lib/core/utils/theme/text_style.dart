@@ -4,48 +4,40 @@ abstract class TextStyles {
   static TextStyle style25 = const TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
   );
 
   static TextStyle style24 = const TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
-    color: Colors.black,
   );
 
   static TextStyle style22 = const TextStyle(
     fontSize: 22,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
   );
 
   static TextStyle style20 = const TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
   );
 
   static TextStyle style18 = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.normal,
-    color: Colors.black,
   );
 
   static TextStyle style18SemiBold = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
-    color: Colors.black,
   );
 
   static TextStyle style18Bold = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
-    color: Colors.black,
   );
 
   static TextStyle style16 = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.normal,
-    color: Colors.black,
   );
 }
