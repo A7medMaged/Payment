@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payment/features/checkout/presentation/views/cart_veiw.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CheckoutApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CheckoutApp extends StatelessWidget {
+  const CheckoutApp({super.key});
 
   @override
   Widget build(BuildContext context) {
