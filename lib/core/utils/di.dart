@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:payment/core/utils/dio_factory.dart';
 import 'package:payment/core/utils/stripe_service.dart';
 import 'package:payment/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:payment/features/checkout/logic/cubit/payment_cubit.dart';
 
 GetIt getIt = GetIt.instance;
 
@@ -22,7 +23,7 @@ void setupDependencyInjection() {
   );
 
   // cubits
-  getIt.registerFactory<CheckoutRepoImpl>(
-    () => CheckoutRepoImpl(stripeService: getIt<StripeService>()),
+  getIt.registerFactory<PaymentCubit>(
+    () => PaymentCubit(getIt<CheckoutRepoImpl>()),
   );
 }

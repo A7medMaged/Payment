@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment/core/utils/di.dart';
 import 'package:payment/core/widgets/custom_button.dart';
+import 'package:payment/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:payment/features/checkout/logic/cubit/payment_cubit.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/oreder_info_item.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/payment_methods_bottom_sheet.dart';
 import 'package:payment/features/checkout/presentation/views/widgets/total_price.dart';
@@ -63,7 +67,10 @@ class CartViewBody extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => const PaymentMethodsBottomSheet(),
+                builder: (context) => BlocProvider(
+                  create: (context) => PaymentCubit(getIt<CheckoutRepoImpl>()),
+                  child: const PaymentMethodsBottomSheet(),
+                ),
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(16),

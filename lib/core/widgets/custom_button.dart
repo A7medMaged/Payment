@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:payment/core/utils/theme/text_style.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onPressed, required this.text});
+  const CustomButton({
+    super.key,
+    this.onPressed,
+    required this.text,
+    this.isLoading = false,
+  });
   final void Function()? onPressed;
   final String text;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +26,12 @@ class CustomButton extends StatelessWidget {
           color: const Color(0xFF34A853),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyles.style22,
-          ),
+          child: isLoading
+              ? const CircularProgressIndicator()
+              : Text(
+                  text,
+                  style: TextStyles.style22,
+                ),
         ),
       ),
     );

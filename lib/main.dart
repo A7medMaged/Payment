@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payment/core/utils/di.dart';
 import 'package:payment/core/utils/theme/theme_cubit.dart';
 import 'package:payment/features/checkout/presentation/views/cart_veiw.dart';
 
-void main() {
+void main() async {
+  setupDependencyInjection();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const CheckoutApp());
 }
 
