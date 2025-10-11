@@ -1,12 +1,20 @@
-
 class Metadata {
-	Metadata();
+  final Map<String, String?> values;
 
-	factory Metadata.fromJson(Map<String, dynamic> json) {
-		throw UnimplementedError('Metadata.fromJson($json) is not implemented');
-	}
+  Metadata({Map<String, String?>? values}) : values = values ?? {};
 
-	Map<String, dynamic> toJson() {
-		throw UnimplementedError();
-	}
+  factory Metadata.fromJson(Map<String, dynamic> json) {
+    // Convert all values to String? to match typical Stripe metadata shape
+    final map = <String, String?>{};
+    json.forEach((key, value) {
+      if (value == null) {
+        map[key] = null;
+      } else {
+        map[key] = value.toString();
+      }
+    });
+    return Metadata(values: map);
+  }
+
+  Map<String, dynamic> toJson() => Map<String, dynamic>.from(values);
 }

@@ -8,7 +8,7 @@ class StripeService {
 
   StripeService({required this.dio});
   Future<PaymentIntentModel> createPaymentIntent(
-    PayMentIntentRequest paymentIntentRequest,
+    PaymentIntentRequest paymentIntentRequest,
   ) async {
     var response = await dio.post(
       'https://api.stripe.com/v1/payment_intents',
@@ -19,7 +19,7 @@ class StripeService {
   }
 
   Future initPaymentSheet({required String paymentIntentClientSecret}) async {
-    Stripe.instance.initPaymentSheet(
+    await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
         merchantDisplayName: 'Flutter Stripe Store',
         paymentIntentClientSecret: paymentIntentClientSecret,
@@ -28,15 +28,23 @@ class StripeService {
   }
 
   Future presentPaymentSheet() async {
-    await Stripe.instance.presentPaymentSheet();
+    try {
+      await Stripe.instance.presentPaymentSheet();
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future makePayment({
-    required PayMentIntentRequest paymentIntentRequest,
+    required PaymentIntentRequest paymentIntentRequest,
   }) async {
     var paymentIntentModel = await createPaymentIntent(paymentIntentRequest);
+    final clientSecret = paymentIntentModel.clientSecret;
+    if (clientSecret == null || clientSecret.isEmpty) {
+      throw Exception('PaymentIntent client_secret is missing');
+    }
     await initPaymentSheet(
-      paymentIntentClientSecret: paymentIntentModel.clientSecret!,
+      paymentIntentClientSecret: clientSecret,
     );
     await presentPaymentSheet();
   }

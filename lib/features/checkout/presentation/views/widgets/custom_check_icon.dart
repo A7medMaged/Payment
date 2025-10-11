@@ -16,7 +16,7 @@ class CustomCheckIcon extends StatelessWidget {
         child: Icon(
           Icons.check,
           size: 50,
-          color: Colors.white,
+          // color: Colors.white,
         ),
       ),
     );

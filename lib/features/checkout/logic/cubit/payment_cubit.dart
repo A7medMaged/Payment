@@ -11,7 +11,7 @@ class PaymentCubit extends Cubit<PaymentState> {
   final CheckoutRepoImpl checkoutRepoImpl;
 
   Future makePayment({
-    required PayMentIntentRequest paymentIntentRequest,
+    required PaymentIntentRequest paymentIntentRequest,
   }) async {
     emit(PaymentLoading());
     var result = await checkoutRepoImpl.makePayment(

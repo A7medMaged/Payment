@@ -4,6 +4,6 @@ import 'package:payment/features/checkout/data/models/payment_intent_request.dar
 
 abstract class CheckoutRepo {
   Future<Either<Failure, void>> makePayment({
-    required PayMentIntentRequest paymentIntentRequest,
+    required PaymentIntentRequest paymentIntentRequest,
   });
 }

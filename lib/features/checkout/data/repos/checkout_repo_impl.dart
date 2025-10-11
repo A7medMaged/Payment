@@ -11,7 +11,7 @@ class CheckoutRepoImpl extends CheckoutRepo {
 
   @override
   Future<Either<Failure, void>> makePayment({
-    required PayMentIntentRequest paymentIntentRequest,
+    required PaymentIntentRequest paymentIntentRequest,
   }) async {
     try {
       await stripeService.makePayment(
