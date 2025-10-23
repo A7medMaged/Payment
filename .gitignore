@@ -12,7 +12,6 @@
 .swiftpm/
 migrate_working_dir/
 lib/core/utils/api_keys.dart
-.github/workflows/flutter_firebase_cd.yml
 
 # IntelliJ related
 *.iml
