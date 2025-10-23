@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'api_keys.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -27,7 +26,7 @@ class DioFactory {
   }
 
   static void addDioHeaders() async {
-    const token = ApiKeys.stripeSecretKey;
+    const token = String.fromEnvironment('STRIPE_SECRET_KEY');
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization': 'Bearer $token',

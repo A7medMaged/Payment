@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'core/utils/api_keys.dart';
 import 'package:payment/core/utils/di.dart';
 import 'package:payment/core/utils/theme/theme_cubit.dart';
 import 'package:payment/features/checkout/presentation/views/cart_veiw.dart';
@@ -10,7 +9,9 @@ import 'package:payment/features/checkout/presentation/views/cart_veiw.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupDependencyInjection();
-  Stripe.publishableKey = ApiKeys.stripePublishableKey;
+  Stripe.publishableKey = const String.fromEnvironment(
+    'STRIPE_PUBLISHABLE_KEY',
+  );
   runApp(const CheckoutApp());
 }
 
