@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build Flutter APK
-    runs-on: android
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
